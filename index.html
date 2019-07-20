@@ -1,11 +1,96 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <title>Exercise 3</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="./style.css" type="text/css">
 </head>
+
 <body>
-    <center>
-        <h1>Daftar Planet</h1>
-    </center>
+    <input type="text" id="myInput" onkeyup="myFunction()" placeholder="What do you wan to find..">
+
+    <table id="myTable">
+        <tr class="header">
+            <th style="width:30%;">Name</th>
+            <th style="width:30%;">Climate</th>
+            <th style="width:30%;">population</th>
+        </tr>
+        <tr>
+            <td>Alderaan</td>
+            <td>temperate</td>
+            <td>2000000000</td>
+        </tr>
+        <tr>
+            <td>Yavin IV</td>
+            <td>temperate, tropical</td>
+            <td>1000</td>
+        </tr>
+        <tr>
+            <td>Hoth</td>
+            <td>frozen</td>
+            <td>unknown</td>
+        </tr>
+        <tr>
+            <td>Dagobah</td>
+            <td>murky</td>
+            <td>unknown</td>
+        </tr>
+        <tr>
+            <td>Bespin</td>
+            <td>temperate</td>
+            <td>6000000</td>
+        </tr>
+        <tr>
+            <td>Endor</td>
+            <td>temperate</td>
+            <td>30000000</td>
+        </tr>
+        <tr>
+            <td>Naboo</td>
+            <td>temperate</td>
+            <td>4500000000</td>
+        </tr>
+        <tr>
+            <td>Coruscant</td>
+            <td>temperate</td>
+            <td>1000000000000</td>
+        </tr>
+        <tr>
+            <td>Kamino</td>
+            <td>temperate</td>
+            <td>1000000000</td>
+        </tr>
+        <tr>
+            <td>Geonosis</td>
+            <td>temperate, arid</td>
+            <td>100000000000</td>
+        </tr>
+
+    </table>
+    <script>
+        function myFunction() {
+            var input, filter, table, tr, td, i, txtValue;
+            input = document.getElementById("myInput");
+            filter = input.value.toUpperCase();
+            table = document.getElementById("myTable");
+            tr = table.getElementsByTagName("tr");
+            for (i = 0; i < tr.length; i++) {
+                td = tr[i].getElementsByTagName("td")[0, 1, 2];
+                if (td) {
+                    txtValue = td.textContent || td.innerText;
+                    if (txtValue.toUpperCase().indexOf(filter) > -1) {
+                        tr[i].style.display = "";
+                    } else {
+                        tr[i].style.display = "none";
+                    }
+                }
+            }
+        }
+    </script>
+
 </body>
+
 </html>
